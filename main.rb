@@ -5,9 +5,9 @@ require 'lib/elements'
 require 'erb'
 class Main
 
-
-  def initialize
-    
+  
+  def initialize(css = 0)
+    @css = css
     @files = Dir.entries("files")
     @files.delete(".")
     @files.delete("..")
@@ -31,14 +31,14 @@ class Main
     end
 
     0.upto(@links.length - 1).each do |x|
-      Write.to_file(@files[x], Skeleton.create( Parser.new(@text[x]).change() ))
+      Write.to_file(@files[x], Skeleton.create( Parser.new(@text[x]).change(), @css ))
     end
 
     #open the main page
 
     
     File.open("main.html", "w") do |x|
-      x.puts Skeleton.create(@links.join)
+      x.puts Skeleton.create(@links.join, @css)
     end
 
   end
@@ -46,4 +46,4 @@ class Main
 
 end
 
-Main.new.assemble
+
