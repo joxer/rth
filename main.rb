@@ -1,6 +1,8 @@
-require 'parser'
-require 'opener'
-require 'skeleton'
+require 'lib/parser'
+require 'lib/opener'
+require 'lib/skeleton'
+require 'lib/elements'
+require 'erb'
 class Main
 
 
