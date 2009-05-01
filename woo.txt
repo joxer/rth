@@ -1,0 +1,6 @@
+.p<>
+
+>:(
+%ruby% "ciao mondo" #ruby#
+
+.ep

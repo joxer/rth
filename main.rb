@@ -31,13 +31,13 @@ class Main
     end
 
     0.upto(@links.length - 1).each do |x|
-      Write.to_file(@files[x], Skeleton.create( Parser.new(@text[x]).change(), @css ))
+      Write.to_file(@files[x], Skeleton.create( Parser.new(@text[x]).change(), @css ), "html/")
     end
 
     #open the main page
 
     
-    File.open("main.html", "w") do |x|
+    File.open("html/main.html", "w") do |x|
       x.puts Skeleton.create(@links.join, @css)
     end
 
